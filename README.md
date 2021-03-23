@@ -26,10 +26,11 @@ $ sudo podman run -d --restart=always --pod=my-pod -e MYSQL_DATABASE="net_bankin
 
 use Dockerfile to build the image for phpmyadmin with copy connect.php file which is above created.
 
+$ sudo podman build -t con-web .
 
 now run container with using image build by Dockerfile
 
-$ sudo podman run -d --restart=always --pod=con   -e PMA_HOST="127.0.0.1" --name con-web localhost/con-web
+$ sudo podman run -d --restart=always --pod=my-pod   -e PMA_HOST="127.0.0.1" --name con-web localhost/con-web
 
 
 now access it from localhost with 8080 port.
